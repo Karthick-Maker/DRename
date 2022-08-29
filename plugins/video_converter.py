@@ -49,8 +49,8 @@ async def convert_to_video(bot, update):
         file_name=download_location
         a = await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.DOWNLOAD_START
-         # ,reply_to_message_id=update.message_id
+            text=Translation.DOWNLOAD_START,
+            reply_to_message_id=update.id
         )
         c_time = time.time()
         the_real_download_location = await bot.download_media(
@@ -66,8 +66,8 @@ async def convert_to_video(bot, update):
         if the_real_download_location is not None:
             await bot.edit_message_text(
                 text=Translation.SAVED_RECVD_DOC_FILE,
-                chat_id=update.chat.id
-              #, message_id=a.reply_to_message.message_id
+                chat_id=update.chat.id,
+                message_id=a.id
             )
             # don't care about the extension
            # await bot.edit_message_text(
@@ -139,7 +139,7 @@ async def convert_to_video(bot, update):
             await bot.edit_message_text(
                 text=Translation.AFTER_SUCCESSFUL_UPLOAD_MSG,
                 chat_id=update.chat.id,
-                #message_id=a.message_id,
+                message_id=a.id,
                 disable_web_page_preview=True
             )
     else:
