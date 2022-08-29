@@ -34,6 +34,10 @@ from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
 
+@Mai_bOTs.on_message(pyrogram.filters.command(["start"]))
+async def start_me(bot, update):
+  await update.reply_text("Hi Bot is working")
+    
 
 @Mai_bOTs.on_message(pyrogram.filters.command(["c2v"]))
 async def convert_to_video(bot, update):
