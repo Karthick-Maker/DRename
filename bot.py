@@ -22,9 +22,9 @@ if __name__ == "__main__" :
     )
     app = pyrogram.Client(
         "RenameBot",
-        bot_token=Config.TG_BOT_TOKEN,
-        api_id=Config.APP_ID,
-        api_hash=Config.API_HASH,
+        bot_token="5594793092:AAGM82wZFn43aiU5ceWrFvhFvS4V3XjGkwI",
+        api_id=int("13003049"),
+        api_hash="5c37465fe653a28519bb8b9b68269f5f",
         plugins=plugins
     )
     Config.AUTH_USERS.add(861055237)
